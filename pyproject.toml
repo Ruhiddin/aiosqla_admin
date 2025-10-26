@@ -12,7 +12,7 @@ license = { text = "MIT" }
 authors = [
   { name="Ruhiddin Turdaliyev", email="niddihur@email.com" }
 ]
-keywords = ["aiogram", "sqlalchemy", "admin", "async", "bot"]
+keywords = ["aiogram", "sqlalchemy", "admin", "async", "bot", "database"]
 dependencies = [
   "aiogram>=3.0",
   "SQLAlchemy>=2.0",
