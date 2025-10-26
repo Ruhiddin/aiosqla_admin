@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=69.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aiosqla-admin"
+version = "0.1.0"
+description = "A project that provides Aiogramm tools to manipulate SQLAlchemy-driven Databases via telegram bot."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+  { name="Ruhiddin Turdaliyev", email="niddihur@email.com" }
+]
+keywords = ["aiogram", "sqlalchemy", "admin", "async", "bot"]
+dependencies = [
+  "aiogram>=3.0",
+  "SQLAlchemy>=2.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Ruhiddin/aiosqla-admin"
+Repository = "https://github.com/Ruhiddin/aiosqla-admin"
+Issues = "https://github.com/Ruhiddin/aiosqla-admin/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["aiosqla_admin*"]

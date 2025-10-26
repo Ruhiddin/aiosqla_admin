@@ -1,0 +1,36 @@
+name: Publish to PyPI
+
+on:
+    push:
+        tags:
+            - "v*"  # runs when you push tags like v1.2.3
+
+permissions:
+    contents: read
+
+jobs:
+    build-and-publish:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Set up Python
+              uses: actions/setup-python@v5
+              with:
+                  python-version: "3.12"
+
+            - name: Install dependencies
+              run: |
+                  python -m pip install --upgrade pip
+                  pip install build twine
+
+            - name: Build package
+              run: python -m build
+
+            - name: Publish package to PyPI
+              uses: pypa/gh-action-pypi-publish@release/v1
+              with:
+                  user: ${{ secrets.PYPI_USERNAME }}
+                  password: ${{ secrets.PYPI_PASSWORD }}
